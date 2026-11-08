@@ -1,0 +1,130 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9391311d-a83f-5579-b705-9e697eaa9122",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-13T20:32:05Z",
+    "component": {
+      "type": "application",
+      "name": "K_PYGEOM",
+      "version": "79d33965a40b",
+      "bom-ref": "pkg:generic/anticloud/K_PYGEOM@79d33965a40b",
+      "purl": "pkg:generic/anticloud/K_PYGEOM@79d33965a40b",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "79d33965a40b7fa83616a9f598a0f8619f25d939"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/pyg-team/pytorch_geometric.git"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "aiohttp",
+      "version": "unspecified",
+      "purl": "pkg:pypi/aiohttp",
+      "bom-ref": "pypi/aiohttp@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "fsspec",
+      "version": "unspecified",
+      "purl": "pkg:pypi/fsspec",
+      "bom-ref": "pypi/fsspec@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "jinja2",
+      "version": "unspecified",
+      "purl": "pkg:pypi/jinja2",
+      "bom-ref": "pypi/jinja2@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": "unspecified",
+      "purl": "pkg:pypi/numpy",
+      "bom-ref": "pypi/numpy@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "psutil",
+      "version": ">=5.8.0",
+      "purl": "pkg:pypi/psutil@5.8.0",
+      "bom-ref": "pypi/psutil@>=5.8.0"
+    },
+    {
+      "type": "library",
+      "name": "pyparsing",
+      "version": "unspecified",
+      "purl": "pkg:pypi/pyparsing",
+      "bom-ref": "pypi/pyparsing@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "requests",
+      "version": "unspecified",
+      "purl": "pkg:pypi/requests",
+      "bom-ref": "pypi/requests@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "tqdm",
+      "version": "unspecified",
+      "purl": "pkg:pypi/tqdm",
+      "bom-ref": "pypi/tqdm@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "xxhash",
+      "version": "unspecified",
+      "purl": "pkg:pypi/xxhash",
+      "bom-ref": "pypi/xxhash@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Torch",
+      "version": "unspecified",
+      "purl": "pkg:generic/Torch",
+      "bom-ref": "native/Torch@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "TorchScatter",
+      "version": "unspecified",
+      "purl": "pkg:generic/TorchScatter",
+      "bom-ref": "native/TorchScatter@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "TorchSparse",
+      "version": "unspecified",
+      "purl": "pkg:generic/TorchSparse",
+      "bom-ref": "native/TorchSparse@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Python3",
+      "version": "unspecified",
+      "purl": "pkg:generic/Python3",
+      "bom-ref": "native/Python3@unspecified"
+    }
+  ]
+}

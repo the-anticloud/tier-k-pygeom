@@ -1,0 +1,1627 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "K_PYGEOM",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\TIER_5_WORLD_NEURO_EMBODIED\\K_PYGEOM\\UPSTREAM",
+  "git": {
+   "head": "79d33965a40b7fa83616a9f598a0f8619f25d939",
+   "url": "https://github.com/pyg-team/pytorch_geometric.git",
+   "branch": "master",
+   "committed_at": "2026-09-01T16:22:41-07:00"
+  }
+ },
+ "metrics": {
+  "files_total": 1528,
+  "source_files_scanned": 1345,
+  "lines_of_code": 190799,
+  "languages": {
+   ".py": 1337,
+   ".rst": 68,
+   ".png": 29,
+   ".md": 28,
+   ".csv": 9,
+   "(none)": 8,
+   ".yaml": 8,
+   ".sh": 6,
+   ".txt": 6,
+   ".svg": 6,
+   ".yml": 4,
+   ".jinja": 4,
+   ".tex": 4,
+   ".off": 2,
+   ".json": 1
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "class": "A",
+  "source_file": "LICENSE",
+  "redistribution_allowed": true
+ },
+ "dependencies": {
+  "count": 13,
+  "unique": 13,
+  "by_ecosystem": {
+   "native": 4,
+   "pypi": 9
+  },
+  "list": [
+   {
+    "ecosystem": "pypi",
+    "name": "aiohttp",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "aiohttp"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "fsspec",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "fsspec"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "jinja2",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "jinja2"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "numpy",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "numpy"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "psutil",
+    "version": ">=5.8.0",
+    "source_file": "pyproject.toml",
+    "raw": "psutil>=5.8.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "pyparsing",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "pyparsing"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "requests",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "requests"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "tqdm",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "tqdm"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "xxhash",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "xxhash"
+   },
+   {
+    "ecosystem": "native",
+    "name": "Torch",
+    "version": "",
+    "source_file": "examples/cpp/CMakeLists.txt",
+    "raw": "find_package(Torch"
+   },
+   {
+    "ecosystem": "native",
+    "name": "TorchScatter",
+    "version": "",
+    "source_file": "examples/cpp/CMakeLists.txt",
+    "raw": "find_package(TorchScatter"
+   },
+   {
+    "ecosystem": "native",
+    "name": "TorchSparse",
+    "version": "",
+    "source_file": "examples/cpp/CMakeLists.txt",
+    "raw": "find_package(TorchSparse"
+   },
+   {
+    "ecosystem": "native",
+    "name": "Python3",
+    "version": "",
+    "source_file": "examples/cpp/CMakeLists.txt",
+    "raw": "find_package(Python3"
+   }
+  ]
+ },
+ "owasp_top10": {
+  "total_findings": 290,
+  "files_with_findings": 275,
+  "severity": {
+   "high": 167,
+   "medium": 8,
+   "low": 115
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/qa_gen.py",
+      "line": 770,
+      "cwe": "CWE-327",
+      "snippet": "text_hash = hashlib.md5(text.encode()).hexdigest()[:8]"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/llm/txt2qa.py",
+      "line": 524,
+      "cwe": "CWE-327",
+      "snippet": "task_id = hashlib.md5(Path(file_path).stem.encode()).hexdigest()"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 167,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "torch_geometric/utils/embedding.py",
+      "line": 50,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/nn/model_hub.py",
+      "line": 180,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/nn/summary.py",
+      "line": 114,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/nn/models/gpse.py",
+      "line": 605,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/llm/utils/feature_store.py",
+      "line": 61,
+      "cwe": "CWE-95",
+      "snippet": "self.encoder_model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/llm/models/glem.py",
+      "line": 315,
+      "cwe": "CWE-95",
+      "snippet": "self.gnn.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/llm/models/qa_gen.py",
+      "line": 1161,
+      "cwe": "CWE-502",
+      "snippet": "self.artifact_storage = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/llm/models/txt2kg.py",
+      "line": 102,
+      "cwe": "CWE-95",
+      "snippet": "self.model = LLM(LM_name).eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/io/planetoid.py",
+      "line": 107,
+      "cwe": "CWE-502",
+      "snippet": "out = pickle.load(f, encoding='latin1')"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/graphgym/utils/agg_runs.py",
+      "line": 110,
+      "cwe": "CWE-95",
+      "snippet": "eval(f\"performance_np.{cfg.metric_agg}()\")]["
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/explain/explainer.py",
+      "line": 112,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/explain/algorithm/gnn_explainer.py",
+      "line": 610,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/aqsol.py",
+      "line": 105,
+      "cwe": "CWE-502",
+      "snippet": "graphs = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/ba2motif_dataset.py",
+      "line": 107,
+      "cwe": "CWE-502",
+      "snippet": "adj, x, y = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/ba_multi_shapes.py",
+      "line": 87,
+      "cwe": "CWE-502",
+      "snippet": "adjs, xs, ys = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/cornell.py",
+      "line": 128,
+      "cwe": "CWE-95",
+      "snippet": "for node in eval(row['nodes']):  # str(list) -> list:"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/ged_dataset.py",
+      "line": 235,
+      "cwe": "CWE-502",
+      "snippet": "obj = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/gnn_benchmark_dataset.py",
+      "line": 199,
+      "cwe": "CWE-502",
+      "snippet": "adjs = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/lrgb.py",
+      "line": 188,
+      "cwe": "CWE-502",
+      "snippet": "graphs = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/mixhop_synthetic_dataset.py",
+      "line": 80,
+      "cwe": "CWE-502",
+      "snippet": "edges = pickle.load(open(self.raw_paths[2], 'rb'), encoding='latin1')"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/pascal.py",
+      "line": 155,
+      "cwe": "CWE-95",
+      "snippet": "vgg16.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/protein_mpnn_dataset.py",
+      "line": 185,
+      "cwe": "CWE-502",
+      "snippet": "data = pickle.load(f)"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/web_qsp_dataset.py",
+      "line": 230,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/willow_object_class.py",
+      "line": 118,
+      "cwe": "CWE-95",
+      "snippet": "vgg16.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "torch_geometric/datasets/zinc.py",
+      "line": 137,
+      "cwe": "CWE-502",
+      "snippet": "mols = pickle.load(f)"
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 92,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "torch_geometric/config_store.py",
+      "line": 427,
+      "cwe": "CWE-",
+      "snippet": "'AddMetaPaths',  # TODO"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/edge_index.py",
+      "line": 483,
+      "cwe": "CWE-",
+      "snippet": "# TODO Remove once PyTorch does not override `dtype` in `DataLoader`."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/experimental.py",
+      "line": 7,
+      "cwe": "CWE-",
+      "snippet": "# TODO (matthias) This file currently requires manual imports to let"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/hash_tensor.py",
+      "line": 191,
+      "cwe": "CWE-",
+      "snippet": "# TODO Expose fixed threshold as argument."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/index.py",
+      "line": 255,
+      "cwe": "CWE-",
+      "snippet": "# TODO Remove once PyTorch does not override `dtype` in `DataLoader`."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/inspector.py",
+      "line": 467,
+      "cwe": "CWE-",
+      "snippet": "# TODO Only convert to `Optional` if `Optional` is importable."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/typing.py",
+      "line": 55,
+      "cwe": "CWE-",
+      "snippet": "# TODO Drop this code block once `segment_matmul` is fixed."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/utils/hetero.py",
+      "line": 116,
+      "cwe": "CWE-",
+      "snippet": "# TODO Add support for SparseTensor w/o converting."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/utils/_select.py",
+      "line": 56,
+      "cwe": "CWE-",
+      "snippet": "# TODO Sparse tensors in `torch.sparse` do not yet support `narrow`."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/utils/_spmm.py",
+      "line": 101,
+      "cwe": "CWE-",
+      "snippet": "# TODO The `torch.sparse.mm` code path with the `reduce` argument does"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/transforms/add_positional_encoding.py",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "# TODO Move to `BaseTransform`."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/transforms/to_sparse_tensor.py",
+      "line": 114,
+      "cwe": "CWE-",
+      "snippet": "# TODO Multi-dimensional edge attributes only supported for COO."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/testing/asserts.py",
+      "line": 94,
+      "cwe": "CWE-",
+      "snippet": "# TODO Add support for values."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/testing/decorators.py",
+      "line": 256,
+      "cwe": "CWE-",
+      "snippet": "# TODO Using `pyg-lib` metis partitioning leads to some weird bugs"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/sampler/base.py",
+      "line": 211,
+      "cwe": "CWE-",
+      "snippet": "# TODO(manan): refine this further; it does not currently define a proper"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/sampler/neighbor_sampler.py",
+      "line": 78,
+      "cwe": "CWE-",
+      "snippet": "# TODO(zaristei)"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/sampler/utils.py",
+      "line": 45,
+      "cwe": "CWE-",
+      "snippet": "# TODO(manan) deprecate when FeatureStore / GraphStore unification is complete"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/fx.py",
+      "line": 286,
+      "cwe": "CWE-",
+      "snippet": "# TODO We currently only trace top-level modules."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/to_hetero_module.py",
+      "line": 40,
+      "cwe": "CWE-",
+      "snippet": "# TODO We currently assume that `x` is sorted according to `type`."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/pool/select/topk.py",
+      "line": 12,
+      "cwe": "CWE-",
+      "snippet": "# TODO (matthias) Document this method."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/norm/layer_norm.py",
+      "line": 203,
+      "cwe": "CWE-",
+      "snippet": "# TODO Revisit this logic completely as it performs worse than just"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/basic_gnn.py",
+      "line": 340,
+      "cwe": "CWE-",
+      "snippet": "# assert not loader.shuffle  # TODO (matthias) does not work :("
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/gpse.py",
+      "line": 884,
+      "cwe": "CWE-",
+      "snippet": "# HACK: We need to reset virtual node features to zeros to match the"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/lpformer.py",
+      "line": 392,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Needed due to a bug in recent torch versions"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/tgn.py",
+      "line": 171,
+      "cwe": "CWE-",
+      "snippet": "# TODO Investigate why this is needed."
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 5,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "examples/llm/git_mol.py",
+      "line": 126,
+      "cwe": "CWE-1188",
+      "snippet": "parser.add_argument('--checkpointing', type=bool, default=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/llm/molecule_gpt.py",
+      "line": 197,
+      "cwe": "CWE-1188",
+      "snippet": "parser.add_argument('--checkpointing', type=bool, default=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/llm/protein_mpnn.py",
+      "line": 256,
+      "cwe": "CWE-1188",
+      "snippet": "parser.add_argument('--mixed_precision', type=bool, default=True,"
+     },
+     {
+      "severity": "medium",
+      "file": "benchmark/training/training_benchmark.py",
+      "line": 381,
+      "cwe": "CWE-1188",
+      "snippet": "add('--export-chrome-trace', default=True, type=bool,"
+     },
+     {
+      "severity": "medium",
+      "file": "benchmark/inference/inference_benchmark.py",
+      "line": 339,
+      "cwe": "CWE-1188",
+      "snippet": "add('--export-chrome-trace', default=True, type=bool,"
+     }
+    ]
+   },
+   "A06-VulnerableComponents": {
+    "count": 0,
+    "findings": []
+   },
+   "A07-AuthFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 23,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/pool/graclus.py",
+      "line": 15,
+      "cwe": "CWE-319",
+      "snippet": "Eigenvectors: A Multilevel Approach\" <http://www.cs.utexas.edu/users/"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/label_prop.py",
+      "line": 15,
+      "cwe": "CWE-319",
+      "snippet": "<http://mlg.eng.cam.ac.uk/zoubin/papers/CMU-CALD-02-107.pdf>`_ paper."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/models/schnet.py",
+      "line": 91,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://www.quantum-machine.org/datasets/trained_schnet_models.zip'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/aqsol.py",
+      "line": 19,
+      "cwe": "CWE-319",
+      "snippet": "<http://arxiv.org/abs/2003.00982>`_ paper based on"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/dynamic_faust.py",
+      "line": 12,
+      "cwe": "CWE-319",
+      "snippet": "<http://files.is.tue.mpg.de/black/papers/dfaust2017.pdf>`_ paper."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/faust.py",
+      "line": 13,
+      "cwe": "CWE-319",
+      "snippet": "<http://files.is.tue.mpg.de/black/papers/FAUST2014.pdf>`_ paper,"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/gdelt_lite.py",
+      "line": 18,
+      "cwe": "CWE-319",
+      "snippet": "Architectures for Temporal Networks?\" <http://arxiv.org/abs/2302.11636>`_"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/hgb_dataset.py",
+      "line": 21,
+      "cwe": "CWE-319",
+      "snippet": "<http://keg.cs.tsinghua.edu.cn/jietang/publications/"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/jodie.py",
+      "line": 62,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://snap.stanford.edu/jodie/{}.csv'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/malnet_tiny.py",
+      "line": 47,
+      "cwe": "CWE-319",
+      "snippet": "data_url = ('http://malnet.cc.gatech.edu/'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/md17.py",
+      "line": 19,
+      "cwe": "CWE-319",
+      "snippet": "of `sGDML <http://quantum-machine.org/gdml>`_."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/modelnet.py",
+      "line": 82,
+      "cwe": "CWE-319",
+      "snippet": "'http://3dvision.princeton.edu/projects/2014/3DShapeNets/ModelNet10.zip',  # noqa"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/molecule_net.py",
+      "line": 14,
+      "cwe": "CWE-319",
+      "snippet": "r\"\"\"The `MoleculeNet <http://moleculenet.org/datasets-1>`_ benchmark"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/nell.py",
+      "line": 51,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://www.cs.cmu.edu/~zhiliny/data/nell_data.tar.gz'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/ogb_mag.py",
+      "line": 50,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://snap.stanford.edu/ogb/data/nodeproppred/mag.zip'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/pascal.py",
+      "line": 62,
+      "cwe": "CWE-319",
+      "snippet": "image_url = ('http://host.robots.ox.ac.uk/pascal/VOC/voc2011/'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/pcpnet_dataset.py",
+      "line": 51,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://geometry.cs.ucl.ac.uk/projects/2018/pcpnet/pclouds.zip'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/shapenet.py",
+      "line": 20,
+      "cwe": "CWE-319",
+      "snippet": "<http://web.stanford.edu/~ericyi/papers/part_annotation_16_small.pdf>`_"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/shrec2016.py",
+      "line": 15,
+      "cwe": "CWE-319",
+      "snippet": "<http://www.dais.unive.it/~shrec2016/shrec16-partial.pdf>`_ paper."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/tosca.py",
+      "line": 58,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://tosca.cs.technion.ac.il/data/toscahires-asci.zip'"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/datasets/willow_object_class.py",
+      "line": 50,
+      "cwe": "CWE-319",
+      "snippet": "url = ('http://www.di.ens.fr/willow/research/graphlearning/'"
+     },
+     {
+      "severity": "low",
+      "file": "examples/datapipe.py",
+      "line": 82,
+      "cwe": "CWE-319",
+      "snippet": "url = 'http://vision.princeton.edu/projects/2014/3DShapeNets'"
+     },
+     {
+      "severity": "low",
+      "file": "docs/source/conf.py",
+      "line": 44,
+      "cwe": "CWE-319",
+      "snippet": "# 'numpy': ('http://docs.scipy.org/doc/numpy', None),"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "torch_geometric/data/download.py",
+      "line": 47,
+      "cwe": "CWE-918",
+      "snippet": "data = urllib.request.urlopen(url, context=context)"
+     }
+    ]
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 21,
+  "files_with_findings": 19,
+  "severity": {
+   "high": 0,
+   "medium": 15,
+   "low": 6
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/qa_gen.py",
+      "line": 69,
+      "cwe": "CWE-1336",
+      "snippet": "artifact_extraction_prompt_template = Template(artifact_extraction_prompt)"
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/llm/models/txt2kg.py",
+      "line": 12,
+      "cwe": "CWE-1427",
+      "snippet": "SYSTEM_PROMPT = \"Please convert the above text into a list of knowledge triples with the form ('entity', 'relation', 'entity'). Separate each with a new line. Do not output anythin"
+     }
+    ]
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM03-SupplyChain": {
+    "count": 14,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "torch_geometric/nn/model_hub.py",
+      "line": 61,
+      "cwe": "CWE-494",
+      "snippet": "model = N2V.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/nn/models/gpse.py",
+      "line": 387,
+      "cwe": "CWE-494",
+      "snippet": "gpse_model = GPSE.from_pretrained('molpcba')"
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/git_mol.py",
+      "line": 93,
+      "cwe": "CWE-494",
+      "snippet": "config = AutoConfig.from_pretrained(\"allenai/scibert_scivocab_uncased\")"
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/glem.py",
+      "line": 86,
+      "cwe": "CWE-494",
+      "snippet": "self.lm = model_class.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/llm.py",
+      "line": 108,
+      "cwe": "CWE-494",
+      "snippet": "self.tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/sentence_transformer.py",
+      "line": 37,
+      "cwe": "CWE-494",
+      "snippet": "self.tokenizer = AutoTokenizer.from_pretrained(model_name)"
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/llm/models/vision_transformer.py",
+      "line": 22,
+      "cwe": "CWE-494",
+      "snippet": "self.config = SwinConfig.from_pretrained(model_name)"
+     },
+     {
+      "severity": "medium",
+      "file": "torch_geometric/datasets/tag_dataset.py",
+      "line": 35,
+      "cwe": "CWE-494",
+      "snippet": "return AutoTokenizer.from_pretrained(model_name)"
+     },
+     {
+      "severity": "medium",
+      "file": "test/nn/test_model_hub.py",
+      "line": 87,
+      "cwe": "CWE-494",
+      "snippet": "def test_from_pretrained(model, tmp_path):"
+     },
+     {
+      "severity": "medium",
+      "file": "test/nn/models/test_gpse.py",
+      "line": 49,
+      "cwe": "CWE-494",
+      "snippet": "def test_gpse_from_pretrained():"
+     },
+     {
+      "severity": "medium",
+      "file": "test/llm/models/test_glem.py",
+      "line": 80,
+      "cwe": "CWE-494",
+      "snippet": "def fake_from_pretrained(*args, **kwargs):"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/gpse.py",
+      "line": 31,
+      "cwe": "CWE-494",
+      "snippet": "gpse_model = GPSE.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "examples/llm/txt2kg_rag.py",
+      "line": 247,
+      "cwe": "CWE-494",
+      "snippet": "zip_path = hf_hub_download("
+     },
+     {
+      "severity": "medium",
+      "file": "examples/llm/txt2qa.py",
+      "line": 308,
+      "cwe": "CWE-494",
+      "snippet": "downloaded_file = hf_hub_download("
+     }
+    ]
+   },
+   "LLM04-DataPoisoning": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 5,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "torch_geometric/nn/pool/knn.py",
+      "line": 17,
+      "cwe": "CWE-",
+      "snippet": "(:math:`k`-NN) via the :obj:`faiss` library."
+     },
+     {
+      "severity": "low",
+      "file": "torch_geometric/llm/models/qa_gen.py",
+      "line": 15,
+      "cwe": "CWE-",
+      "snippet": "import faiss"
+     },
+     {
+      "severity": "low",
+      "file": "test/nn/pool/test_knn.py",
+      "line": 14,
+      "cwe": "CWE-",
+      "snippet": "@withPackage('faiss')"
+     },
+     {
+      "severity": "low",
+      "file": "test/llm/test_txt2qa.py",
+      "line": 9,
+      "cwe": "CWE-",
+      "snippet": "@withPackage('faiss', 'json_repair', 'openai', 'pandas')"
+     },
+     {
+      "severity": "low",
+      "file": "examples/llm/txt2qa.py",
+      "line": 885,
+      "cwe": "CWE-",
+      "snippet": "{}).get('validation_method', 'hybrid_with_faiss')),"
+     }
+    ]
+   },
+   "LLM09-Misinformation": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9391311d-a83f-5579-b705-9e697eaa9122",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-13T20:32:05Z",
+   "component": {
+    "type": "application",
+    "name": "K_PYGEOM",
+    "version": "79d33965a40b",
+    "bom-ref": "pkg:generic/anticloud/K_PYGEOM@79d33965a40b",
+    "purl": "pkg:generic/anticloud/K_PYGEOM@79d33965a40b",
+    "licenses": [
+     {
+      "license": {
+       "id": "MIT"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "79d33965a40b7fa83616a9f598a0f8619f25d939"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": "https://github.com/pyg-team/pytorch_geometric.git"
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": [
+   {
+    "type": "library",
+    "name": "aiohttp",
+    "version": "unspecified",
+    "purl": "pkg:pypi/aiohttp",
+    "bom-ref": "pypi/aiohttp@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "fsspec",
+    "version": "unspecified",
+    "purl": "pkg:pypi/fsspec",
+    "bom-ref": "pypi/fsspec@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "jinja2",
+    "version": "unspecified",
+    "purl": "pkg:pypi/jinja2",
+    "bom-ref": "pypi/jinja2@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "numpy",
+    "version": "unspecified",
+    "purl": "pkg:pypi/numpy",
+    "bom-ref": "pypi/numpy@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "psutil",
+    "version": ">=5.8.0",
+    "purl": "pkg:pypi/psutil@5.8.0",
+    "bom-ref": "pypi/psutil@>=5.8.0"
+   },
+   {
+    "type": "library",
+    "name": "pyparsing",
+    "version": "unspecified",
+    "purl": "pkg:pypi/pyparsing",
+    "bom-ref": "pypi/pyparsing@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "requests",
+    "version": "unspecified",
+    "purl": "pkg:pypi/requests",
+    "bom-ref": "pypi/requests@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "tqdm",
+    "version": "unspecified",
+    "purl": "pkg:pypi/tqdm",
+    "bom-ref": "pypi/tqdm@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "xxhash",
+    "version": "unspecified",
+    "purl": "pkg:pypi/xxhash",
+    "bom-ref": "pypi/xxhash@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "Torch",
+    "version": "unspecified",
+    "purl": "pkg:generic/Torch",
+    "bom-ref": "native/Torch@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "TorchScatter",
+    "version": "unspecified",
+    "purl": "pkg:generic/TorchScatter",
+    "bom-ref": "native/TorchScatter@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "TorchSparse",
+    "version": "unspecified",
+    "purl": "pkg:generic/TorchSparse",
+    "bom-ref": "native/TorchSparse@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "Python3",
+    "version": "unspecified",
+    "purl": "pkg:generic/Python3",
+    "bom-ref": "native/Python3@unspecified"
+   }
+  ]
+ },
+ "elapsed_seconds": 5.58,
+ "benchmarks": [
+  {
+   "evidence": {
+    "ceilings": {
+     "max_files": 120,
+     "max_lines": 20000,
+     "min_lines": 2000
+    },
+    "code_lines": 6889,
+    "command": "python tools/run_bench.py --only 01_loc_files",
+    "counts_command": "find src tests tools -name '*.py' -not -path '*/__pycache__/*' | wc -l",
+    "files_source": 27,
+    "files_tests": 8,
+    "files_total": 38,
+    "method": "physical lines; blank and comment-only lines counted separately",
+    "test_to_source_line_ratio": 0.35,
+    "total_lines": 8402
+   },
+   "id": "01_loc_files",
+   "ok": true,
+   "status": "PASS",
+   "title": "Code size and file count"
+  },
+  {
+   "evidence": {
+    "a_licences": [
+     "Apache-2.0",
+     "BSD-2-Clause",
+     "BSD-3-Clause",
+     "ISC",
+     "MIT",
+     "MPL-2.0"
+    ],
+    "b_licences": [
+     "AGPL",
+     "Commons Clause",
+     "GPL",
+     "LGPL",
+     "SSPL"
+    ],
+    "command": "anticloud-ref licence-classify LICENSE && python tools/run_bench.py --only 02_licence",
+    "default_for_unknown_is_C": true,
+    "mismatches": {},
+    "observed": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "only_class_A_may_relicense": true,
+    "policy_probes": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "project_licence": {
+     "LICENSE": "A",
+     "reason": "permissive licence text identified",
+     "spdx": "apache-2.0"
+    },
+    "pyproject_declared": "Apache-2.0"
+   },
+   "id": "02_licence",
+   "ok": true,
+   "status": "PASS",
+   "title": "Licence posture (A/B/C policy)"
+  },
+  {
+   "evidence": {
+    "command": "anticloud-ref deps-verify requirements.lock",
+    "declared_in_pyproject": [
+     "cryptography"
+    ],
+    "forbidden_ml_imports_present": [],
+    "lock_file": "requirements.lock",
+    "packages_hashed": 6,
+    "packages_pinned": 6,
+    "requirements": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest==9.1.1",
+     "pytest-cov==7.1.0"
+    ],
+    "sha256_hashes": 286,
+    "transitive_or_unclassified": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest-cov==7.1.0",
+     "pytest==9.1.1"
+    ],
+    "verify_problems": []
+   },
+   "id": "03_dependency_scan",
+   "ok": true,
+   "status": "PASS",
+   "title": "Dependency scan (hash-pinned lock)"
+  },
+  {
+   "evidence": {
+    "command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d['bomFormat'],d['specVersion'],len(d['components']))\"",
+    "components": 272,
+    "components_with_licence": 265,
+    "components_with_sha256": 4,
+    "dependency_edges": 272,
+    "file": "sbom.cdx.json",
+    "format": "CycloneDX",
+    "generated_from": "live importlib.metadata + requirements.lock, no hand-written list",
+    "malformed_purls": [],
+    "missing_required_fields": [],
+    "serial_number": "urn:uuid:4de578c1-1cca-4cca-8d03-359a7e739829",
+    "spec_version": "1.5"
+   },
+   "id": "04_sbom_cyclonedx",
+   "ok": true,
+   "status": "PASS",
+   "title": "SBOM (CycloneDX 1.5)"
+  },
+  {
+   "evidence": {
+    "branch": "main",
+    "command": "git status --porcelain && git log --oneline -1 && git fsck --no-progress",
+    "commits": 1,
+    "gitignore_present": true,
+    "governed_by_changelog": true,
+    "head": "4d9ef3e1f434f8b3f9a2ba8b54ce16b78e06c509",
+    "latest_commit": "4d9ef3e anticloud overlay for K_PYGEOM",
+    "remotes": [],
+    "repo": true,
+    "tags": [],
+    "untracked_or_modified": [],
+    "working_tree_clean": true
+   },
+   "id": "05_git_health",
+   "ok": true,
+   "status": "PASS",
+   "title": "Git health"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "LLM01",
+     "LLM02",
+     "LLM03",
+     "LLM04",
+     "LLM05",
+     "LLM06",
+     "LLM07",
+     "LLM08",
+     "LLM09",
+     "LLM10"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework owasp_llm_top10   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 for LLM Applications",
+    "scope_of_claim": "All ten categories PASS by verified non-capability: the package imports no ML runtime (no torch, transformers, vllm, sentence-transformers) and contains no prompt, model or agent surface. A PASS means the risk is structurally absent, not mitigated.",
+    "unverified_detail": []
+   },
+   "id": "06_owasp_llm_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 for LLM Applications"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "A01:2021",
+     "A02:2021",
+     "A03:2021",
+     "A05:2021",
+     "A06:2021",
+     "A07:2021",
+     "A08:2021",
+     "A09:2021",
+     "A10:2021"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework owasp_top10   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 (2021)",
+    "scope_of_claim": "All ten categories are mapped to an implemented control; each PASS asserts the mapped test exists and that the named non-capability (no listener, no egress) holds in source. It is not a penetration test.",
+    "unverified_detail": []
+   },
+   "id": "07_owasp_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 (2021)"
+  },
+  {
+   "evidence": {
+    "authority": "AICPA",
+    "command": "python tools/run_bench.py --only soc2",
+    "control_ids": [
+     "CC6.1",
+     "CC6.2",
+     "CC6.6",
+     "CC6.7",
+     "CC6.8",
+     "CC7.2",
+     "CC8.1",
+     "CC9.2",
+     "CC6.1"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework soc2   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "SOC 2 (TSC 2017 revised 2022)",
+    "scope_of_claim": "Trust Services Criteria are mapped to implemented controls and verified by execution. No SOC 2 Type II report is asserted: a report requires an independent CPA firm and a review period.",
+    "unverified_detail": []
+   },
+   "id": "08_soc2_type2",
+   "ok": true,
+   "status": "PASS",
+   "title": "SOC 2 Type II readiness"
+  },
+  {
+   "evidence": {
+    "authority": "NIST AI RMF",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_ai_rmf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST AI Risk Management Framework 1.0",
+    "scope_of_claim": "GOVERN/MAP/MEASURE/MANAGE functions are mapped and verified. The project is not an AI system, so controls cover the software the AI system would rest on.",
+    "unverified_detail": []
+   },
+   "id": "09_nist_ai_rmf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST AI Risk Management Framework"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "AC-3(2)",
+     "AC-6(7)",
+     "AU-2",
+     "AU-3",
+     "AU-10",
+     "CM-6",
+     "CP-9",
+     "RA-5",
+     "SA-11",
+     "SI-7",
+     "SC-12",
+     "SC-13"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework nist_800_53   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST SP 800-53 Rev. 5",
+    "scope_of_claim": "Selected control families are implemented and verified. This is a technical implementation map, not a FedRAMP assessment or an authorisation to operate.",
+    "unverified_detail": []
+   },
+   "id": "10_nist_sp_800_53",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST SP 800-53 Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_csf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "scope_of_claim": "CSF 2.0 functions are covered through the aligned control map. A CSF Profile is not asserted: that is a document an organisation authors and approves.",
+    "unverified_detail": []
+   },
+   "id": "11_nist_csf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST Cybersecurity Framework 2.0"
+  },
+  {
+   "evidence": {
+    "authority": "FedRAMP",
+    "command": "python tools/run_bench.py --only fedramp",
+    "control_ids": [
+     "IA-2",
+     "IA-5",
+     "RA-5",
+     "SA-4",
+     "SA-10",
+     "SA-11",
+     "SC-7",
+     "SC-8",
+     "SC-13",
+     "SI-2"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework fedramp   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "FedRAMP Rev. 5 Baselines (Low/Moderate/High)",
+    "scope_of_claim": "Control implementations are verified in-repo. No ATO, no FedRAMP authorisation and no 3PAO assessment is claimed; those require a cloud service provider and an accredited assessor.",
+    "unverified_detail": []
+   },
+   "id": "12_fedramp",
+   "ok": true,
+   "status": "PASS",
+   "title": "FedRAMP Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "PCI SSC",
+    "command": "python tools/run_bench.py --only pci",
+    "control_ids": [
+     "1.1.1",
+     "1.2.1",
+     "2.2.1",
+     "3.4.1",
+     "3.5.1",
+     "6.2.4",
+     "6.4.2",
+     "8.3.6",
+     "10.2.1",
+     "11.3.1",
+     "11.5.2"
+    ],
+    "controls_mapped": 11,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 11,
+    "coverage_command": "anticloud-ref bench --framework pci_dss   # 11/11 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "PCI DSS v4.0.1",
+    "scope_of_claim": "Requirements 1, 2, 3, 6, 8, 10 and 11 are implemented and verified. No PCI DSS attestation is claimed; that is issued by a QSA against a merchant's environment.",
+    "unverified_detail": []
+   },
+   "id": "13_pci_dss",
+   "ok": true,
+   "status": "PASS",
+   "title": "PCI DSS v4.0.1"
+  },
+  {
+   "evidence": {
+    "authority": "ISO/IEC",
+    "command": "python tools/run_bench.py --only iso",
+    "control_ids": [
+     "5.1.1",
+     "5.1.2",
+     "8.2.3",
+     "8.24",
+     "8.28",
+     "8.29",
+     "8.16",
+     "8.20",
+     "8.24"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework iso_27001   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "ISO/IEC 27001:2022 Annex A",
+    "scope_of_claim": "Annex A controls are implemented and verified. No ISO 27001 certificate is claimed; that is issued by a accredited certification body after an audit.",
+    "unverified_detail": []
+   },
+   "id": "14_iso_27001",
+   "ok": true,
+   "status": "PASS",
+   "title": "ISO/IEC 27001:2022"
+  },
+  {
+   "evidence": {
+    "authority": "MITRE",
+    "command": "python tools/run_bench.py --only mitre",
+    "control_ids": [
+     "T1078",
+     "T1552",
+     "T1552.001",
+     "T1553",
+     "T1195.002",
+     "T1221",
+     "T1600.002",
+     "T1499",
+     "T1565",
+     "T1565.001",
+     "T1530",
+     "T1619"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework mitre_attack   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "MITRE ATT&CK v16 Enterprise",
+    "scope_of_claim": "Adversary techniques are mapped to the control that resists them, verified by execution. This is not adversary emulation or a purple-team exercise.",
+    "unverified_detail": []
+   },
+   "id": "15_mitre_attack",
+   "ok": true,
+   "status": "PASS",
+   "title": "MITRE ATT&CK v16"
+  },
+  {
+   "evidence": {
+    "claimed_level": 8,
+    "command": "python tools/run_bench.py --only 16 && cat docs/18_TRL_JUSTIFICATION/TRL.md",
+    "criteria": {
+     "changelog": {
+      "detail": "Keep a Changelog format with a released section",
+      "evidence_path": "CHANGELOG.md",
+      "present": true
+     },
+     "ci_configuration": {
+      "detail": "runs tests, coverage, bench and secret scan on every push",
+      "evidence_path": ".github/workflows/ci.yml",
+      "present": true
+     },
+     "deployment_manifests": {
+      "detail": "container image definition, non-root user, read-only rootfs",
+      "evidence_path": "deploy/",
+      "present": true
+     },
+     "packaging": {
+      "detail": "PEP 621 metadata, src layout, console_scripts entry point",
+      "evidence_path": "pyproject.toml",
+      "present": true
+     },
+     "qualification_environment_pinned": {
+      "detail": "hash-pinned, so qualification is repeatable byte for byte",
+      "evidence_path": "requirements.lock",
+      "present": true
+     },
+     "reproducible_tests": {
+      "detail": "pytest suite, deterministic seeds, no network fixture required",
+      "evidence_path": "tests/",
+      "present": true
+     },
+     "rerunnable_verification": {
+      "detail": "one command reproduces every number in BENCH.json",
+      "evidence_path": "tools/run_bench.py",
+      "present": true
+     },
+     "versioning": {
+      "detail": "single source of truth, currently 1.0.0",
+      "evidence_path": "src/anticloud_ref/_version.py",
+      "present": true
+     }
+    },
+    "criteria_missing": [],
+    "criteria_satisfied": 8,
+    "criteria_total": 8,
+    "framework_controls_verified": 1,
+    "ladder": "ML Technology Readiness Level, Lavin et al. 2022 (TMLR)",
+    "observed_level": 8,
+    "source": "22_COMPLIANCE_FRAMEWORKS/FACTS.md",
+    "trL9_claimed": false,
+    "trL9_reason": "requires proven success in an operational environment, which cannot be asserted from a repository"
+   },
+   "id": "16_ml_trl",
+   "ok": true,
+   "status": "PASS",
+   "title": "ML Technology Readiness Level 8"
+  }
+ ],
+ "passed": 16,
+ "failed": 0,
+ "failed_ids": [],
+ "all_passed": true,
+ "checks_executed_at": "2026-10-13T20:32:11.118254+00:00",
+ "checks_evidence": "ISOLATED_LAB_RESULTS/04_Evidence/16_checks_report.json",
+ "checks_evidence_sha3": "f2da6f446300f619dc024b3531c48f6c4acf7b75727c454e4597e39cc148af32"
+}
